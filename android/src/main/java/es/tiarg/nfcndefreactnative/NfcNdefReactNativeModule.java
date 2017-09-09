@@ -289,6 +289,15 @@ class NfcNdefReactNativeModule extends ReactContextBaseJavaModule implements Act
         this.index = index;
         this.readOperation = true;
     }
+    
+    @ReactMethod
+    public void reset() {
+        this.tagId = 0;
+        this.sectores = null;
+        this.readOperation = false;
+        this.writeOperation = false;
+        this.idOperation = false;
+    }
 
     @ReactMethod
     public void writeTag(ReadableArray to_write) {
